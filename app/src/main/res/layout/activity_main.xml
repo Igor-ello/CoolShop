@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,21 +26,97 @@
          <LinearLayout
              android:layout_width="match_parent"
              android:layout_height="wrap_content"
-             android:orientation="vertical">
+             android:orientation="vertical"
+             android:layout_marginTop="20dp">
              <LinearLayout
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
                  android:orientation="horizontal"
                  android:gravity="center">
 
-                 <include layout="@layout/column">
-                 </include>
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:orientation="vertical"
+                     android:gravity="center">
+                     <CheckBox
+                         android:id="@+id/ch1"
+                         style="@style/CheckBox"
+                         android:text="Рыба">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch2"
+                         style="@style/CheckBox"
+                         android:text="Мясо">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch3"
+                         style="@style/CheckBox"
+                         android:text="Яйца">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch4"
+                         style="@style/CheckBox"
+                         android:text="Сахар">
+                     </CheckBox>
+                 </LinearLayout>
 
-                 <include layout="@layout/column">
-                 </include>
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:orientation="vertical"
+                     android:gravity="center">
+                     <CheckBox
+                         android:id="@+id/ch5"
+                         style="@style/CheckBox"
+                         android:text="Соль">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch6"
+                         style="@style/CheckBox"
+                         android:text="Помидоры">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch7"
+                         style="@style/CheckBox"
+                         android:text="Огурцы">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch8"
+                         style="@style/CheckBox"
+                         android:text="Кетчуп">
+                     </CheckBox>
+                 </LinearLayout>
 
-                 <include layout="@layout/column">
-                 </include>
+                 <LinearLayout
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_weight="1"
+                     android:orientation="vertical"
+                     android:gravity="center">
+                     <CheckBox
+                         android:id="@+id/ch9"
+                         style="@style/CheckBox"
+                         android:text="Картошка">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch10"
+                         style="@style/CheckBox"
+                         android:text="Масло">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch11"
+                         style="@style/CheckBox"
+                         android:text="Пельмени">
+                     </CheckBox>
+                     <CheckBox
+                         android:id="@+id/ch12"
+                         style="@style/CheckBox"
+                         android:text="Виноград">
+                     </CheckBox>
+                 </LinearLayout>
 
              </LinearLayout>
          </LinearLayout>
@@ -53,23 +130,35 @@
             android:gravity="center"
             android:layout_marginTop="100dp">
             <RadioButton
+                android:id="@+id/rbDelivery"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="50dp"
                 android:text="Доставка">
             </RadioButton>
             <RadioButton
+                android:id="@+id/rbPickup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Самовывоз">
             </RadioButton>
+            <RadioButton
+                android:id="@+id/rbToDoor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="До двери">
+            </RadioButton>
         </RadioGroup>
 
         <TextView
+            android:id="@+id/textInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:layout_margin="20dp"
+            android:text="Пока ничего нет"
+            android:textSize="22sp">
         </TextView>
 
         <LinearLayout
@@ -80,12 +169,14 @@
             android:layout_marginTop="10dp">
 
             <Button
+                android:id="@+id/btBuy"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="BUY"
                 android:layout_marginRight="50dp">
             </Button>
             <Button
+                android:id="@+id/btClear"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Clear All">
