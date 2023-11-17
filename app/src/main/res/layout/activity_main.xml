@@ -7,6 +7,9 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -28,18 +31,22 @@
              android:layout_height="wrap_content"
              android:orientation="vertical"
              android:layout_marginTop="20dp">
+
+             <TextView
+                 style="@style/HeaderTextView"
+                 android:text="Товары в наличии:">
+             </TextView>
+
              <LinearLayout
                  android:layout_width="match_parent"
                  android:layout_height="wrap_content"
-                 android:orientation="horizontal"
-                 android:gravity="center">
+                 android:orientation="horizontal">
 
                  <LinearLayout
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"
                      android:layout_weight="1"
-                     android:orientation="vertical"
-                     android:gravity="center">
+                     android:orientation="vertical">
                      <CheckBox
                          android:id="@+id/ch1"
                          style="@style/CheckBox"
@@ -66,8 +73,7 @@
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"
                      android:layout_weight="1"
-                     android:orientation="vertical"
-                     android:gravity="center">
+                     android:orientation="vertical">
                      <CheckBox
                          android:id="@+id/ch5"
                          style="@style/CheckBox"
@@ -94,8 +100,7 @@
                      android:layout_width="match_parent"
                      android:layout_height="wrap_content"
                      android:layout_weight="1"
-                     android:orientation="vertical"
-                     android:gravity="center">
+                     android:orientation="vertical">
                      <CheckBox
                          android:id="@+id/ch9"
                          style="@style/CheckBox"
@@ -122,52 +127,76 @@
          </LinearLayout>
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <TextView
+            style="@style/HeaderTextView"
+            android:text="Доставка:">
+        </TextView>
 
         <RadioGroup
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:layout_marginTop="100dp">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
             <RadioButton
                 android:id="@+id/rbDelivery"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="50dp"
+                style="@style/RadioButton"
                 android:text="Доставка">
             </RadioButton>
             <RadioButton
                 android:id="@+id/rbPickup"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/RadioButton"
                 android:text="Самовывоз">
             </RadioButton>
             <RadioButton
                 android:id="@+id/rbToDoor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/RadioButton"
                 android:text="До двери">
             </RadioButton>
         </RadioGroup>
 
-        <TextView
-            android:id="@+id/textInfo"
+    </LinearLayout>
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:layout_marginTop="10dp"
-            android:layout_margin="20dp"
-            android:text="Пока ничего нет"
-            android:textSize="22sp">
-        </TextView>
+            android:orientation="vertical"
+            android:layout_marginTop="20dp">
+            <TextView
+                style="@style/HeaderTextView"
+                android:text="Ваши товары:">
+            </TextView>
+
+            <TextView
+                android:id="@+id/textInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border"
+                android:text="Пока ничего нет"
+                android:layout_marginTop="3dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                android:textStyle="bold">
+            </TextView>
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="20dp">
 
+            <Button
+                android:id="@+id/btUpdate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:layout_marginRight="50dp">
+            </Button>
             <Button
                 android:id="@+id/btBuy"
                 android:layout_width="wrap_content"
@@ -183,5 +212,6 @@
             </Button>
         </LinearLayout>
     </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
