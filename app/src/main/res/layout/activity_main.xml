@@ -183,6 +183,16 @@
             </TextView>
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/tvCall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Позвонить по номеру телефона"
+            android:textSize="18sp"
+            android:textStyle="bold">
+        </TextView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

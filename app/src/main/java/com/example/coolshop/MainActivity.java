@@ -3,7 +3,10 @@ package com.example.coolshop;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
@@ -17,6 +20,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private TextView textView;
+    private String listProducts;
     private int[] allCheckBox;
     private CheckBox checkBox;
     private int[] allRadioButton;
@@ -59,6 +63,15 @@ public class MainActivity extends AppCompatActivity {
         });
         binding.btBuy.setOnClickListener(view -> {
             if(isSelectedProducts && isSelectedDelivery) {
+                listProducts = String.valueOf(textView.getText());
+                Log.d("MyLog", listProducts);
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Список продуктов");
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ioproglab@gamil.com"});
+                intent.putExtra(Intent.EXTRA_TEXT, listProducts);
+                //intent.setData(Uri.parse("tel:"+"89164236040"));
+                startActivity(intent);
                 clearTextView();
                 textView.setText("Спасибо за покупку!");
             }
@@ -69,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btClear.setOnClickListener(view -> {
             clearTextView();
         });
+
     }
 
     private void resetToDefault(){
